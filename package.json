@@ -1,0 +1,33 @@
+{
+  "name": "hexo-mipcss",
+  "version": "0.0.1",
+  "description": "在 hexo 主题中处理 MIP 的 css",
+  "main": "index.js",
+  "scripts": {
+    "preversion": "npm run lint",
+    "postversion": "git push origin master && git push origin --tags",
+    "lint": "fecs check index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xuexb/hexo-mipcss.git"
+  },
+  "keywords": [
+    "hexo",
+    "mip"
+  ],
+  "author": "xuexb <fe.xiaowu@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xuexb/hexo-mipcss/issues"
+  },
+  "homepage": "https://github.com/xuexb/hexo-mipcss#readme",
+  "dependencies": {
+    "clean-css": "^4.1.9",
+    "extend": "^3.0.1",
+    "glob": "^7.1.2"
+  },
+  "devDependencies": {
+    "fecs": "^1.4.1"
+  }
+}
