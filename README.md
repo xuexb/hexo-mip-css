@@ -19,8 +19,13 @@ npm install --save hexo-mip-css
 ```
 # _config.yml
 mip:
-    # 是否开启 css 压缩
-    cssmin: true
+    # 是否开启 css 压缩, 默认为 false
+    cssmin: false
+
+    # 指定加载的文件, 以 `souce/css/` 为基础路径
+    css:
+        - reset.css
+        - demo.css
 ```
 
 ## License

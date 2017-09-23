@@ -19,13 +19,17 @@ hexo.extend.filter.register('before_generate', function () {
 
 hexo.extend.filter.register('after_generate', function () {
     var config = extend({
+        css: null,
         cssmin: false
     }, hexo.theme.config.mip, hexo.config.mip);
     var cwd = path.resolve(this.theme_dir, './source/css');
-    var data = glob.sync('**/!(_*).css', {
-        cwd: cwd
-    });
+    var data = config.css;
 
+    if (!data || !data.length) {
+        data = glob.sync('**/!(_*).css', {
+            cwd: cwd
+        });
+    }
     content = data.map(function (uri) {
         return path.resolve(cwd, uri);
     }).map(function (filepath) {
