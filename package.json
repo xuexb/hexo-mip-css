@@ -1,6 +1,6 @@
 {
   "name": "hexo-mip-css",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "在 hexo 主题中处理 MIP 的 css",
   "main": "index.js",
   "scripts": {
