@@ -1,5 +1,5 @@
 /**
- * @file hexo-mipcss
+ * @file hexo-mip-css
  * @author xuexb <fe.xiaowu@gmail.com>
  */
 
@@ -19,8 +19,8 @@ hexo.extend.filter.register('before_generate', function () {
 
 hexo.extend.filter.register('after_generate', function () {
     var config = extend({
-        min: false
-    }, hexo.theme.config.mipcss, hexo.config.mipcss);
+        cssmin: false
+    }, hexo.theme.config.mip, hexo.config.mip);
     var cwd = path.resolve(this.theme_dir, './source/css');
     var data = glob.sync('**/!(_*).css', {
         cwd: cwd
@@ -32,7 +32,7 @@ hexo.extend.filter.register('after_generate', function () {
         return fs.readFileSync(filepath).toString();
     }).join('');
 
-    if (config.min) {
+    if (config.cssmin) {
         content = new CleanCSS().minify(content).styles;
     }
 });
