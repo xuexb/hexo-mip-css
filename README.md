@@ -16,7 +16,7 @@ npm install --save hexo-mip-css
 
 ## 配置
 
-```
+``` yaml
 # _config.yml
 mip:
     # 是否开启 css 压缩, 默认为 false
