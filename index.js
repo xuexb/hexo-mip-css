@@ -25,11 +25,16 @@ hexo.extend.filter.register('after_generate', function () {
     var cwd = path.resolve(this.theme_dir, './source/css');
     var data = config.css;
 
+    if ('string' === typeof data) {
+        data = String(config.css || '').split(/\s+/);
+    }
+
     if (!data || !data.length) {
         data = glob.sync('**/!(_*).css', {
             cwd: cwd
         });
     }
+
     content = data.map(function (uri) {
         return path.resolve(cwd, uri);
     }).map(function (filepath) {
